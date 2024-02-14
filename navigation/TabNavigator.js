@@ -2,7 +2,6 @@
 import { StyleSheet, View } from "react-native";
 
 //Importacion de funciones para el TabNavigator
-import { NavigationContainer } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
 //Importacion de Screen Navigators
@@ -21,61 +20,59 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
-    <NavigationContainer>
-        <Tab.Navigator
-            screenOptions={{
-                headerShown: false,
-                tabBarShowLabel: false,
-                tabBarStyle: styles.tabBar,
-            }}>
-                <Tab.Screen
-                    name="ShopStack"
-                    component={ShopNavigator}
-                    options={{
-                        tabBarIcon:({focused}) =>{
-                            return(
-                                <View>
-                                    <Entypo name="shop"
-                                        size={24}
-                                        color={focused?"#fff":"black"}
-                                    />
-                                </View>
-                            );
-                        }
-                    }}>
-                </Tab.Screen>
+    <Tab.Navigator
+        screenOptions={{
+            headerShown: false,
+            tabBarShowLabel: false,
+            tabBarStyle: styles.tabBar,
+        }}>
+            <Tab.Screen
+                name="ShopStack"
+                component={ShopNavigator}
+                options={{
+                    tabBarIcon:({focused}) =>{
+                        return(
+                            <View>
+                                <Entypo name="shop"
+                                    size={24}
+                                    color={focused?"#fff":"black"}
+                                />
+                            </View>
+                        );
+                    }
+                }}>
+            </Tab.Screen>
 
-                <Tab.Screen
-                    name="CartStack"
-                    component={CartNavigator}
-                    options={{
-                        tabBarIcon:({focused}) =>{
-                            return(
-                                <View>
-                                    <AntDesign name="shoppingcart"
-                                        size={24}
-                                        color={focused?"#fff":"black"}
-                                    />
-                                </View>
-                            );
-                        }
-                    }}>
-                </Tab.Screen>
-                <Tab.Screen
-                    name='OrdersStack'
-                    component={OrdersNavigator}
-                    options={{
-                        tabBarIcon:({focused})=>{
-                            return(
-                                <View>
-                                    <FontAwesome name="list-ul" size={24} color={focused?"fff":"black"} />
-                                </View>
-                            );
-                        }
-                    }}>
-                </Tab.Screen>
-        </Tab.Navigator>
-    </NavigationContainer>
+            <Tab.Screen
+                name="CartStack"
+                component={CartNavigator}
+                options={{
+                    tabBarIcon:({focused}) =>{
+                        return(
+                            <View>
+                                <AntDesign name="shoppingcart"
+                                    size={24}
+                                    color={focused?"#fff":"black"}
+                                />
+                            </View>
+                        );
+                    }
+                }}>
+            </Tab.Screen>
+            <Tab.Screen
+                name='OrdersStack'
+                component={OrdersNavigator}
+                options={{
+                    tabBarIcon:({focused})=>{
+                        return(
+                            <View>
+                                <FontAwesome name="list-ul" size={24} color={focused?"fff":"black"} />
+                            </View>
+                        );
+                    }
+                }}>
+            </Tab.Screen>
+    </Tab.Navigator>
   )
 }
 

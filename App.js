@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native';
-import TabNavigator from './navigation/TabNavigator';
+import MainNavigator from './navigation/MainNavigator';
 import { Provider } from 'react-redux';
 import store from './store';
 
 export default function App() {
   return (
     <Provider store={store}>
-      <TabNavigator/>
+      <MainNavigator/>
     </Provider>
   );
 }
